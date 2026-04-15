@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  postgres_db:
+    image: postgres:15
+    container_name: tp1_postgres_server
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: transport_meteo
+    ports:
+      - "5432:5432"

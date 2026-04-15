@@ -1,0 +1,12 @@
+# Environnements virtuels
+venv/
+
+# Fichiers de données et de résultats
+*.csv
+
+# Fichiers de variables d'environnement (Sécurité clés API)
+.env
+
+# Fichiers caches Python et Jupyter
+__pycache__/
+.ipynb_checkpoints/
