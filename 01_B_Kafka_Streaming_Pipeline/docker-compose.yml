@@ -1,4 +1,5 @@
 services:
+  # --- NOTRE BROKER KAFKA ---
   kafka:
     image: apache/kafka:3.7.0
     container_name: kafka_broker
@@ -15,3 +16,14 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+
+  # --- NOTRE BASE DE DONNÉES ---
+  postgres:
+    image: postgres:15
+    container_name: tp_postgres_kafka
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: transport_meteo
+    ports:
+      - "5432:5432"
